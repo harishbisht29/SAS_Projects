@@ -16,12 +16,15 @@ Proc Sql;
 	Where Type=2;
 Quit;
 
+Data &Dataset_Name._Lengths;
+	Set &Dataset_Name.;
+	
+Run;
+
 Data &Dataset_Name.Char_Vars;
 	Set &Dataset_Name.;
 	Length  Var_Name $100.;
 	Array allChars[*] _character_;
-	maxLength = max(of length(allChars(*)));
-	Var_Name = VNAME(allChars[whichn(maxLength, of length(allChars(*)))]);
-	
+
 Run;
 
