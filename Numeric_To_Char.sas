@@ -19,5 +19,7 @@ Quit;
 Data Column_Metadata;
 	Set Column_Metadata;
 	If Upcase(Name) = Upcase("&Column_Name.");
-	Keep Name Length Format FormatL FormatD;
+/* Represents Numeric part of format which comes after format name	 */
+	format_tail = Input(Cats(Put(FormatL,3.),".",Put(FormatD,3.)),Best.);	
+	Keep Name Length Format FormatL FormatD format_tail;
 Run;
