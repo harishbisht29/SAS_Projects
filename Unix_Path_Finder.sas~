@@ -17,8 +17,4 @@ Data Test;
 	If Start ne 0 Then Do;
 		Location = SUBSTRN(line, Start, Length);
 	End;
-	IF Location ne "" AND Location ne "/" THEN OUTPUT;
-	ELSE DELETE;
 Run;
-
-
