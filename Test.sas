@@ -1,12 +1,7 @@
-/* This is a Test Sas Code. */
-
-Data _NULL_;
-	Location = "/usr/bin/sas/nothing.sas";
+Data Life;
+	Dob= "Never Born";
 Run;
 
-Libname home '/usr/library/nothing';
-
-proc import data="/home/Development/Test.xlsx";
-Quit;
-
-%include "/data/include.sas";
+Data NoLife;
+	Died = "Never Died";
+Run;
